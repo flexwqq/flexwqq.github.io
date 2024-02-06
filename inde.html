@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FleX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        </style>
+    </head>
+    <body>
+    
+    <div class="profile">
+        <h1>FleX</h1>
+        <img src="4d792ec7dfad9163a77c0ec11740ef5a.JPG" alt="Sua Foto">
+        <p>jovem aprendiz do nic</p>
+    </div>
+    <button onclick="playAudio()">clicke</button>
+<audio id="myAudio" style="display: none;">
+  <source src="360ytmp3.com_320kbps-snoop-dogg-wiz-khalifa-young-wild-and-free-1-hour-ft-bruno-mars.mp3" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
+<script>
+function playAudio() {
+  var audio = document.getElementById("myAudio");
+  audio.play();
+}
+</script>
+
+<script>
+  const palavras = ['And', 'Ph', 'Gui', 'Gu'];
+
+  function digitar_palavra(palavra_a, letra_a) {
+      if (palavra_a < palavras.length) {
+          const palavra_att = palavras[palavra_a];
+
+          if (letra_a <= palavra_att.length) {
+              document.title = palavra_att.substring(0, letra_a);
+
+              setTimeout(() => {
+                  digitar_palavra(palavra_a, letra_a + 1);
+              }, 200);
+          } else {
+              setTimeout(() => {
+                  document.title = ''; 
+                  digitar_palavra(palavra_a + 1, 0);
+              }, 500);
+          }
+      } else {
+          setTimeout(() => {
+              digitar_palavra(0, 0);
+          }, 500);
+      }
+  }
+
+  digitar_palavra(0, 0);
+</script>
+
+</body>
+</html>
